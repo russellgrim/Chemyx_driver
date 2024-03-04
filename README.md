@@ -16,7 +16,7 @@ TODO: find a tutorial to describe how to do this
 If python interface is introduced, usefull commands here:
 * Virtual environments 
     * pip install virtualenv
-    * python3 -m venv env
+    * python -m venv env
     * env\Scripts\activate.bat
     * deactivate
 * Requirements
@@ -34,6 +34,3 @@ If python interface is introduced, usefull commands here:
     * Deoxigen
 * Logging
     * TBC
-
-
-x
