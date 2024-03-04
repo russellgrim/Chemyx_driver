@@ -308,9 +308,12 @@ class Connection(object):
 if __name__ == "__main__":
     c =  Connection(port="COM6", baudrate=115200,verbose=True,multipump=False)
     c.openConnection()
+    c.sendCommand("1 set units mL/min")
+    c.sendCommand("1 set diameter 14.2")
     c.sendCommand("1 start 0")
     time.sleep(3) # Sleep for 3 seconds
     c.sendCommand("1 stop 0")
+    # c.sendCommand("read limit parameter")
     c.closeConnection()
     
     
