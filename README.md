@@ -1,5 +1,25 @@
 # Chemyx_driver
 
+## Quick Start Guide
+* Download code from git 
+* Dowload python3.7
+* Open CMD
+* Navigate to folder
+* pip install virtualenv
+* python -m venv env
+* env\Scripts\activate.bat
+* pip install -r requirements.txt
+* Connect syringe pump 
+* identify com port with device manger
+* identify buad rate from the display on device
+* update script at the bottom with com and buad
+* python script.py
+
+
+
+
+
+Use python 3.7
 ## Git
 Useful commands for using git. 
 TODO: find a tutorial to describe how to do this

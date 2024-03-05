@@ -306,14 +306,44 @@ class Connection(object):
         
 
 if __name__ == "__main__":
-    c =  Connection(port="COM6", baudrate=115200,verbose=True,multipump=False)
+    c =  Connection(port="COM6", baudrate=115200,verbose=True,multipump=True)
     c.openConnection()
+    
+    # c.sendCommand("help")
+    
+    # -----Seters-----
+    # c.sendCommand("1 set units mL/min")
+    # c.sendCommand("1 set diameter 23.36")
+    # c.sendCommand("1 hexw2 mL/min 0 23.36 1 10 0")
+    # c.sendCommand("1 set delay 0")
+    # c.sendCommand("1 set time 0,1,2,3,4")
+    # c.sendCommand("1 set volume 0.1,0.1,0.1")
+    # c.sendCommand("1 set rate 1,5,10")
+
+    # ------Getters----------
+    # c.sendCommand("1 read limit parameter 1 ")
+    # c.sendCommand("1 read limit parameter 0 ")
+    # c.sendCommand("read limit parameter")
+
+    # -------~Runners--------
+    # c.sendCommand("1 start 0")
+    # c.sendCommand("1 stop 0")
+
+    # -------Program --------
     c.sendCommand("1 set units mL/min")
-    c.sendCommand("1 set diameter 14.2")
+    c.sendCommand("1 set diameter 23.36")
+    c.sendCommand("1 set delay 0")
+    c.sendCommand("1 set volume 50")
+    
+    c.sendCommand("1 set rate 5")
     c.sendCommand("1 start 0")
     time.sleep(3) # Sleep for 3 seconds
+    
+    c.sendCommand("1 set rate 20")
+    time.sleep(3) # Sleep for 3 seconds
+    c.sendCommand("1 set rate 5")
+    time.sleep(3) # Sleep for 3 seconds
     c.sendCommand("1 stop 0")
-    # c.sendCommand("read limit parameter")
     c.closeConnection()
     
     
